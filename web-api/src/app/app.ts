@@ -21,14 +21,12 @@ export class App {
   dbReturn!: any;
   constructor(private http: HttpClient) { }
 
-
   getInputVal(input: any) {
     this.checkDBFizz(input.value).subscribe({
       next: (res) => {
         this.dbReturn = res
       },
       error: (err) => {
-        this.dbReturn = -1;
         console.log(err)
       }
     });
@@ -41,6 +39,9 @@ export class App {
   }
 
   getRes() {
+    //If no input is entered; dbReturn ALWAYS will return the full DB...
+    //TODO: Add logic for both undefined return => Example: 999 submited -> undefined returned from DB
+    //TODO: Don't let submit run if nothing is in the input box
     const resID = this.dbReturn[0].id;
     const value = this.dbReturn[0].name;
     console.log(this.dbReturn);
