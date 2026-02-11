@@ -25,7 +25,6 @@ import { FizzBuzzApi } from '../fizz-buzz-api';
 })
 export class Fizzbuzz {
   private apiConnection = inject(FizzBuzzApi);
-  protected readonly title = signal('User');
   inputNumber!: number;
   numberValidations: any[] = [];
 
