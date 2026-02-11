@@ -1,0 +1,6 @@
+@SimpleAPI_HostAddress = http://localhost:5172
+
+GET {{SimpleAPI_HostAddress}}/numbervalidation/
+Accept: application/json
+
+###
