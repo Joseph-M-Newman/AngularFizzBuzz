@@ -57,6 +57,8 @@
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
+    flex-direction: column;
+    gap: 30px;
   }
 
   .angular-logo {
@@ -171,31 +173,19 @@
   }
 </style>
 
-<main class="main">
+<main class="test">
+  <div>
+    <h1>Angular + ASP .NET WebAPI</h1>
+  </div>
   <div class="content">
     <div class="left-side">
-      <!--Example of loading into data from component-->
-      <h1>Testing injection from component: {{ title() }}</h1>
-      <br>
-      <label>Input:
-        <!-- keyup is a active listener!  -->
-        <!-- <input type="text" (keyup)="getInputVal($event)"> -->
-        <input type="text" #txt>
-        <!-- Ugly BRs 
-         TODO: THERE HAST to be a way to space it out with CSS, figure it out -->
-        <br>
-        <Br>
-        <button (click)="getInputVal(txt)">Submit</button>
-        <br>
-        <br>
-        <button (click)="getRes()">check alert</button>
-      </label>
+      <app-fizzbuzz></app-fizzbuzz>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <div class="pill-group">
-        <!--Output from webapi if the number is accepted or denied or make a new route?
-        TODO: Make a new route for practice -->
+        <!-- TODO: After FizzBuzz works, use another <app-DisplayFizzBuzz> to show return status code on right side of html 
+             For now, just get the return code alerted-->
       </div>
     </div>
   </div>
