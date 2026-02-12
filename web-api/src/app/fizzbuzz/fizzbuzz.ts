@@ -31,6 +31,7 @@ export class Fizzbuzz {
   private apiConnection = inject(FizzBuzzApi);
   inputNumber!: number;
   fizzBuzzValidation!: string;
+  message!: string;
   showExtraContent = false
   numberValidations: any[] = [];
   numberValidationResult!: any;
@@ -38,6 +39,7 @@ export class Fizzbuzz {
   constructor(private http: HttpClient) { }
 
   getInputVal(input: any) {
+    this.message = "";
     this.apiConnection.getAPI(input.value).subscribe(numberValidations => {
       if (numberValidations != null) {
         this.numberValidations = numberValidations;
@@ -45,9 +47,11 @@ export class Fizzbuzz {
       }
       this.numberValidations = [];
     });
+
     this.numberValidationResult = this.numberValidations;
+
     if (this.numberValidationResult.fizzBuzz === "FizzBuzz") {
-      alert("ID:" + this.numberValidationResult.id + "\nResult:" + this.numberValidationResult.fizzBuzz);
+      this.message = this.numberValidationResult.fizzBuzz
     }
 
   }
