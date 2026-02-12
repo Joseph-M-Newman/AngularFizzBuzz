@@ -1,7 +1,8 @@
-<!-- <div>
-    <app-sidebars></app-sidebars>
-</div> -->
-
+<div style="text-align: center;">
+    <p>Numbers to try: 043, 67, 198, 343, 212</p>
+    <p>Any number outside these will return 200 OK; TODO: WebAPI 404 not found</p>
+    <p>The list is randomly generated on the WebAPI side; so might need to submit a couple times for a return</p>
+</div>
 <div class="matInput">
     <mat-form-field appearance="fill">
         <mat-label>NumberValidation</mat-label>
@@ -9,4 +10,8 @@
     </mat-form-field>
     <br>
     <button (click)="getInputVal(input)" matButton="filled">Submit</button>
+</div>
+
+<div>
+    <p> {{ numberValidationResult }}</p>
 </div>

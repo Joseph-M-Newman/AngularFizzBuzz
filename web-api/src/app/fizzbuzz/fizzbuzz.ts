@@ -23,7 +23,6 @@ import { RouterOutlet } from "@angular/router";
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
-    Sidebars
   ],
   templateUrl: './fizzbuzz.html',
   styleUrl: './fizzbuzz.css',
@@ -31,8 +30,10 @@ import { RouterOutlet } from "@angular/router";
 export class Fizzbuzz {
   private apiConnection = inject(FizzBuzzApi);
   inputNumber!: number;
+  fizzBuzzValidation!: string;
   showExtraContent = false
   numberValidations: any[] = [];
+  numberValidationResult!: any;
 
   constructor(private http: HttpClient) { }
 
@@ -44,15 +45,14 @@ export class Fizzbuzz {
       }
       this.numberValidations = [];
     });
-    this.checkIfReturned(this.numberValidations);
-    console.log(this.numberValidations);
+    this.numberValidationResult = this.numberValidations;
+    if (this.numberValidationResult.fizzBuzz === "FizzBuzz") {
+      alert("ID:" + this.numberValidationResult.id + "\nResult:" + this.numberValidationResult.fizzBuzz);
+    }
+
   }
 
   showExtra() {
     this.showExtraContent = true;
-  }
-
-  checkIfReturned(APIReturn: any[]) {
-    return
   }
 }
