@@ -34,6 +34,7 @@ namespace SimpleAPI.Controllers
         {
             var apiGeneration = Get();
             var allIDs = apiGeneration.FirstOrDefault(x => x.ID == id);
+            
             return Ok(allIDs);
         }
     }

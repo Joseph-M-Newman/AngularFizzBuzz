@@ -1,0 +1,27 @@
+<div class="navContainer">
+    <div class="sidenav-content">
+        <mat-toolbar class="matToolBar">
+            <button type="button" matButton (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+    </div>
+    <div class="sideNav">
+        <mat-drawer-container class="container" autosize="true">
+            <mat-drawer #drawer class="sidenav" mode="side">
+                <div class="flexButton">
+                    <button matButton="elevated">
+                        <a href="/">Home</a>
+                    </button>
+                    <button matButton="elevated">
+                        <a href="/FizzBuzz">WebAPI</a>
+                    </button>
+                    <button matButton="elevated">
+                        <a target="_blank"
+                            href="https://github.com/Joseph-M-Newman/AngularFizzBuzz/tree/master/web-api">GitHub</a>
+                    </button>
+                </div>
+            </mat-drawer>
+        </mat-drawer-container>
+    </div>
+</div>
