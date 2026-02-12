@@ -22,4 +22,10 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class Sidebars {
 
+  navHome() {
+    location.href = '/'
+  }
+  navFizzBuzz() {
+    location.href = '/FizzBuzz'
+  }
 }

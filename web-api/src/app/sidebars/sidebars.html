@@ -10,11 +10,11 @@
         <mat-drawer-container class="container" autosize="true">
             <mat-drawer #drawer class="sidenav" mode="side">
                 <div class="flexButton">
-                    <button matButton="elevated">
-                        <a href="/">Home</a>
+                    <button (click)="navHome()" matButton="elevated">
+                        Home
                     </button>
-                    <button matButton="elevated">
-                        <a href="/FizzBuzz">WebAPI</a>
+                    <button (click)="navFizzBuzz()" matButton="elevated">
+                        WebAPI
                     </button>
                     <button matButton="elevated">
                         <a target="_blank"

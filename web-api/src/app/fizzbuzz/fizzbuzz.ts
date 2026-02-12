@@ -53,7 +53,6 @@ export class Fizzbuzz {
     if (this.numberValidationResult.fizzBuzz === "FizzBuzz") {
       this.message = this.numberValidationResult.fizzBuzz
     }
-
   }
 
   showExtra() {
