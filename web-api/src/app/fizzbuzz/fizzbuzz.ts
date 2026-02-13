@@ -68,7 +68,7 @@ export class Fizzbuzz {
   }
 
   validateInput(input: number) {
-    if (input > 0 && input < 100) {
+    if (input > 0 && input <= 100) {
       this.numberValidated = true;
       return;
     }
