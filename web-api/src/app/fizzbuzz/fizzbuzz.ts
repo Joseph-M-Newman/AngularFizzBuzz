@@ -35,6 +35,7 @@ export class Fizzbuzz {
   numberValidated: boolean = false
   message: string = "";
   showExtraContent = false
+  autoInput!: any;
   numberValidations: any[] = [];
   numberValidationResult!: any;
   private header!: any
@@ -43,13 +44,20 @@ export class Fizzbuzz {
 
   getInputVal(input: any) {
     this.message = "";
-    this.validateInput(Number(input.value));
-    if (!this.numberValidated) {
-      this.dialog.open(DialogComponent);
-      return;
+    if (input.value != null) {
+      this.validateInput(Number(input.value));
+      if (!this.numberValidated) {
+        this.dialog.open(DialogComponent);
+        return;
+      }
     }
 
+
     this.header = { inputNumber: Number(input.value) }
+    this.postAPI();
+  }
+
+  postAPI() {
     this.apiConnection.postAPI(this.header).subscribe(numberValidations => {
       console.log(numberValidations);
     });
@@ -67,12 +75,12 @@ export class Fizzbuzz {
     this.numberValidated = false;
   }
 
-  getRandomNumberAPI() {
+
+  doItForMe() {
     this.apiConnection.getAPI().subscribe(numberValidations => {
-      console.log(numberValidations);
-      return
+      this.header = { inputNumber: Number(numberValidations) };
+      this.postAPI();
     });
-    this.numberValidationResult = this.numberValidations;
   }
 
 }
