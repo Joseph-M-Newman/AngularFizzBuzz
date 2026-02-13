@@ -22,7 +22,7 @@ namespace SimpleAPI.Controllers
             _numberValidateService = numberValidateService;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("getrandomnumber")]
         public IActionResult GetById(int id)
         {
             int returnRandom = getRandomNumber();

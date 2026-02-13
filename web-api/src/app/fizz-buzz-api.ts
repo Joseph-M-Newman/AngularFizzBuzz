@@ -15,7 +15,11 @@ export class FizzBuzzApi {
   }
   constructor() { }
 
-  public getAPI(input: number): Observable<any> {
+  public postAPI(input: number): Observable<any> {
     return this.api.post(this.apiUrl, input, this.httpOptions,);
+  }
+
+  public getAPI(): Observable<any> {
+    return this.api.get(this.apiUrl + `/getrandomnumber`);
   }
 }

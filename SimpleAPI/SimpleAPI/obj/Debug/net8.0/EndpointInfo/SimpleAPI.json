@@ -5,6 +5,28 @@
     "version": "1.0"
   },
   "paths": {
+    "/NumberValidation/getrandomnumber": {
+      "get": {
+        "tags": [
+          "NumberValidation"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/NumberValidation": {
       "post": {
         "tags": [

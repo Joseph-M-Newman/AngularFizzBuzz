@@ -45,12 +45,12 @@ export class Fizzbuzz {
     this.message = "";
     this.validateInput(Number(input.value));
     if (!this.numberValidated) {
-      const dialogRef = this.dialog.open(DialogComponent);
+      this.dialog.open(DialogComponent);
       return;
     }
 
     this.header = { inputNumber: Number(input.value) }
-    this.apiConnection.getAPI(this.header).subscribe(numberValidations => {
+    this.apiConnection.postAPI(this.header).subscribe(numberValidations => {
       console.log(numberValidations);
     });
   }
@@ -66,4 +66,13 @@ export class Fizzbuzz {
     }
     this.numberValidated = false;
   }
+
+  getRandomNumberAPI() {
+    this.apiConnection.getAPI().subscribe(numberValidations => {
+      console.log(numberValidations);
+      return
+    });
+    this.numberValidationResult = this.numberValidations;
+  }
+
 }
