@@ -2,8 +2,8 @@
 {
     public class NumberValidation
     {
-        public int? ID { get; set; }
+        public int inputNumber { get; set; }
+        public string? Result { get; set; }
 
-        public string? FizzBuzz { get; set; }
     }
 }

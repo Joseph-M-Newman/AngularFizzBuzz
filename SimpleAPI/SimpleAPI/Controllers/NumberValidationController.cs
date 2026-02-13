@@ -1,41 +1,44 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SimpleAPI.Services;
 
 namespace SimpleAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    //data access layer?
     public class NumberValidationController : ControllerBase
     {
-        private static readonly int[] Summaries = new[]
-        {
-           043, 067, 100, 198, 212, 343
-        };
 
-        private readonly ILogger<NumberValidationController> _logger;
+        private readonly INumberValidate _numberValidateService;
 
-        public NumberValidationController(ILogger<NumberValidationController> logger)
+        private int getRandomNumber()
         {
-            _logger = logger;
+            Random randomNumber = new Random();
+            return randomNumber.Next(1, 100);
         }
 
-        [HttpGet(Name = "GetNumberValidation")]
-        public IEnumerable<NumberValidation> Get()
+        public NumberValidationController(INumberValidate numberValidateService)
         {
-            return Enumerable.Range(1, 3).Select(index => new NumberValidation
-            {
-                ID = Summaries[Random.Shared.Next(Summaries.Length)],
-                FizzBuzz = "FizzBuzz"
-            })
-            .ToArray();
+            _numberValidateService = numberValidateService;
         }
 
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var apiGeneration = Get();
-            var allIDs = apiGeneration.FirstOrDefault(x => x.ID == id);
-            
-            return Ok(allIDs);
+            int returnRandom = getRandomNumber();
+            return Ok(returnRandom);
+        }
+
+        [HttpPost]
+        public IActionResult validateFizzBuzz([FromBody] NumberValidation request)
+        {
+            var result = _numberValidateService.ValidateNumber(request.inputNumber);
+
+            return Ok(new NumberValidation
+            {
+                inputNumber = request.inputNumber,
+                Result = result
+            });
         }
     }
 }

@@ -6,60 +6,29 @@
   },
   "paths": {
     "/NumberValidation": {
-      "get": {
+      "post": {
         "tags": [
           "NumberValidation"
         ],
-        "operationId": "GetNumberValidation",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/NumberValidation"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/NumberValidation"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/NumberValidation"
-                  }
-                }
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NumberValidation"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NumberValidation"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NumberValidation"
               }
             }
           }
-        }
-      }
-    },
-    "/NumberValidation/{id}": {
-      "get": {
-        "tags": [
-          "NumberValidation"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -73,12 +42,11 @@
       "NumberValidation": {
         "type": "object",
         "properties": {
-          "id": {
+          "inputNumber": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
-          "fizzBuzz": {
+          "result": {
             "type": "string",
             "nullable": true
           }

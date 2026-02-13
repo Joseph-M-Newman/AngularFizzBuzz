@@ -9,8 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { FizzBuzzApi } from '../fizz-buzz-api';
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatToolbarModule } from '@angular/material/toolbar'
-import { Sidebars } from '../sidebars/sidebars';
-import { RouterOutlet } from "@angular/router";
+import { MatDialog, MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent, MatDialogActions } from '@angular/material/dialog';
+import { Dialog } from '@angular/cdk/dialog';
+import { DialogComponent } from '../dialog-component/dialog-component';
 
 @Component({
   selector: 'app-fizzbuzz',
@@ -22,40 +23,47 @@ import { RouterOutlet } from "@angular/router";
     MatLabel,
     MatButtonModule,
     MatSidenavModule,
-    MatToolbarModule,
+    MatToolbarModule
   ],
   templateUrl: './fizzbuzz.html',
   styleUrl: './fizzbuzz.css',
 })
 export class Fizzbuzz {
   private apiConnection = inject(FizzBuzzApi);
-  inputNumber!: number;
+  dialog = inject(MatDialog);
   fizzBuzzValidation!: string;
-  message!: string;
+  numberValidated: boolean = false
+  message: string = "";
   showExtraContent = false
   numberValidations: any[] = [];
   numberValidationResult!: any;
+  private header!: any
 
   constructor(private http: HttpClient) { }
 
   getInputVal(input: any) {
     this.message = "";
-    this.apiConnection.getAPI(input.value).subscribe(numberValidations => {
-      if (numberValidations != null) {
-        this.numberValidations = numberValidations;
-        return
-      }
-      this.numberValidations = [];
-    });
-
-    this.numberValidationResult = this.numberValidations;
-
-    if (this.numberValidationResult.fizzBuzz === "FizzBuzz") {
-      this.message = this.numberValidationResult.fizzBuzz
+    this.validateInput(Number(input.value));
+    if (!this.numberValidated) {
+      const dialogRef = this.dialog.open(DialogComponent);
+      return;
     }
+
+    this.header = { inputNumber: Number(input.value) }
+    this.apiConnection.getAPI(this.header).subscribe(numberValidations => {
+      console.log(numberValidations);
+    });
   }
 
   showExtra() {
     this.showExtraContent = true;
+  }
+
+  validateInput(input: number) {
+    if (input > 0 && input < 100) {
+      this.numberValidated = true;
+      return;
+    }
+    this.numberValidated = false;
   }
 }

@@ -1,4 +1,6 @@
-﻿namespace SimpleAPI.Startup;
+﻿using SimpleAPI.Services;
+
+namespace SimpleAPI.Startup;
 
 public static class OpenApiConfig
 {
@@ -6,5 +8,6 @@ public static class OpenApiConfig
     {
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
+        services.AddScoped<INumberValidate, NumberValidate>();
     }
 }
