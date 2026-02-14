@@ -9,9 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { FizzBuzzApi } from '../fizz-buzz-api';
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatToolbarModule } from '@angular/material/toolbar'
-import { MatDialog, MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent, MatDialogActions } from '@angular/material/dialog';
-import { Dialog } from '@angular/cdk/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog-component/dialog-component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-fizzbuzz',
@@ -30,6 +30,7 @@ import { DialogComponent } from '../dialog-component/dialog-component';
 })
 export class Fizzbuzz {
   private apiConnection = inject(FizzBuzzApi);
+  private _snackbar = inject(MatSnackBar);
   dialog = inject(MatDialog);
   fizzBuzzValidation!: string;
   numberValidated: boolean = false
@@ -37,7 +38,7 @@ export class Fizzbuzz {
   showExtraContent = false
   autoInput!: any;
   numberValidations: any[] = [];
-  numberValidationResult!: any;
+  numberValidationResult!: {inputNumber: number, result: string};
   private header!: any
 
   constructor(private http: HttpClient) { }
@@ -52,19 +53,16 @@ export class Fizzbuzz {
       }
     }
 
-
     this.header = { inputNumber: Number(input.value) }
     this.postAPI();
   }
 
   postAPI() {
     this.apiConnection.postAPI(this.header).subscribe(numberValidations => {
-      console.log(numberValidations);
+      this._snackbar.open(numberValidations.result, "Done", {
+        duration: 1500,
+      });
     });
-  }
-
-  showExtra() {
-    this.showExtraContent = true;
   }
 
   validateInput(input: number) {
@@ -74,7 +72,6 @@ export class Fizzbuzz {
     }
     this.numberValidated = false;
   }
-
 
   doItForMe() {
     this.apiConnection.getAPI().subscribe(numberValidations => {

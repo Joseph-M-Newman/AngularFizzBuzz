@@ -6,7 +6,6 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatIcon } from '@angular/material/icon';
 
-
 @Component({
   selector: 'app-sidebars',
   standalone: true,

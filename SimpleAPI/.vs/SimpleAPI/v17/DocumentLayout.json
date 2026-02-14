@@ -58,8 +58,7 @@
               "RelativeToolTip": "SimpleAPI\\BAL\\INumberValidate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T00:41:01.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-13T00:41:01.041Z"
             },
             {
               "$type": "Document",
@@ -71,8 +70,7 @@
               "RelativeToolTip": "SimpleAPI\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T02:33:38.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T02:33:38.699Z"
             },
             {
               "$type": "Document",
@@ -84,8 +82,7 @@
               "RelativeToolTip": "SimpleAPI\\Endpoints\\RootEndpoints.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T02:47:59.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T02:47:59.859Z"
             },
             {
               "$type": "Document",
@@ -97,8 +94,7 @@
               "RelativeToolTip": "SimpleAPI\\Startup\\OpenApiConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T02:50:02.757Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T02:50:02.757Z"
             },
             {
               "$type": "Document",
@@ -110,8 +106,7 @@
               "RelativeToolTip": "SimpleAPI\\SimpleAPI.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-02-11T02:42:45.111Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T02:42:45.111Z"
             },
             {
               "$type": "Document",
@@ -123,8 +118,7 @@
               "RelativeToolTip": "SimpleAPI\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-11T02:42:31.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T02:42:31.236Z"
             },
             {
               "$type": "Document",
@@ -136,8 +130,7 @@
               "RelativeToolTip": "SimpleAPI\\BAL\\NumberValidate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T00:43:58.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-13T00:43:58.281Z"
             },
             {
               "$type": "Document",
@@ -145,12 +138,11 @@
               "Title": "NumberValidationController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\SWE\\AngularFizzBuzz\\SimpleAPI\\SimpleAPI\\Controllers\\NumberValidationController.cs",
               "RelativeDocumentMoniker": "SimpleAPI\\Controllers\\NumberValidationController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\SWE\\AngularFizzBuzz\\SimpleAPI\\SimpleAPI\\Controllers\\NumberValidationController.cs*",
-              "RelativeToolTip": "SimpleAPI\\Controllers\\NumberValidationController.cs*",
+              "ToolTip": "C:\\Users\\User\\Desktop\\SWE\\AngularFizzBuzz\\SimpleAPI\\SimpleAPI\\Controllers\\NumberValidationController.cs",
+              "RelativeToolTip": "SimpleAPI\\Controllers\\NumberValidationController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T02:55:31.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T02:55:31.873Z"
             },
             {
               "$type": "Document",
@@ -162,8 +154,7 @@
               "RelativeToolTip": "SimpleAPI\\NumberValidation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T03:16:08.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T03:16:08.872Z"
             }
           ]
         }
