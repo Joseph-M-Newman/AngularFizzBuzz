@@ -26,8 +26,16 @@ namespace SimpleAPI.DAL
             Console.WriteLine("Returning blank");
             return "";
         }
-        //add delete
 
+        public string DeleteFizzBuzzEntry(Guid uniqueId)
+        {
+            var result = fizzBuzzStore.Remove(uniqueId);
+            if(result)
+            {
+                return "Entry deleted";
+            }
+            return "Unable to delete entry";
+        }
     }
 
 }
