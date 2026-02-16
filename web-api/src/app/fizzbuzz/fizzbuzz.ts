@@ -36,7 +36,6 @@ export class Fizzbuzz {
   numberValidated: boolean = false;
   message: string = "";
   showExtraContent = false;
-  private guid!: string;
   autoInput!: any;
   numberValidations: any[] = [];
   guidInput: any = "";
@@ -58,16 +57,17 @@ export class Fizzbuzz {
 
   postAPI(input: number) {
     this.guidInput = this.getKeyByValue(this.dictionaryGUID, input);
+    console.log(this.guidInput);
     this.apiConnection.postAPI(input, this.guidInput).subscribe(numberValidations => {
-      if (this.getKeyByValue(this.dictionaryGUID, input) == undefined) {
-        this.guid = numberValidations.uniqueID;
+      if (this.getKeyByValue(this.dictionaryGUID, input) == null) {
+        this.guidInput = numberValidations.uniqueID;
         this.dictionaryGUID.set(numberValidations.uniqueID, input);
       }
       this._snackbar.open("GUID: " + numberValidations.uniqueID, "Done", {
         duration: 4000,
       });
     });
-    this.guid = "";
+    this.guidInput = "";
   }
 
   validateInput(input: number) {
@@ -85,6 +85,11 @@ export class Fizzbuzz {
   }
 
   getKeyByValue(map: Map<string, number>, inputValue: number) {
-    return Array.from(map.entries()).find(([a, b]) => b === inputValue)?.[0];
+    for (const [key, value] of map) {
+      if (value === inputValue) {
+        return key;
+      }
+    }
+    return null;
   }
 }
