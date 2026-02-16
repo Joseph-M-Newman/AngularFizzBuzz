@@ -34,3 +34,13 @@ C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\obj\Debug\net8.0\r
 C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\obj\Debug\net8.0\SimpleAPI.pdb
 C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\obj\Debug\net8.0\SimpleAPI.genruntimeconfig.cache
 C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\obj\Debug\net8.0\ref\SimpleAPI.dll
+C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\bin\Debug\net8.0\Microsoft.Data.Sqlite.dll
+C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\User\Desktop\SWE\AngularFizzBuzz\SimpleAPI\SimpleAPI\bin\Debug\net8.0\SQLitePCLRaw.core.dll

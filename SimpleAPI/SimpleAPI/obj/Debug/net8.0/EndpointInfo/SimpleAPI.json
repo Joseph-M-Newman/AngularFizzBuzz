@@ -10,16 +10,6 @@
         "tags": [
           "NumberValidation"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -27,26 +17,38 @@
         }
       }
     },
-    "/NumberValidation": {
+    "/NumberValidation/validatefizzbuzz": {
       "post": {
         "tags": [
           "NumberValidation"
+        ],
+        "parameters": [
+          {
+            "name": "uniqueID",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NumberValidation"
+                "type": "integer",
+                "format": "int32"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/NumberValidation"
+                "type": "integer",
+                "format": "int32"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/NumberValidation"
+                "type": "integer",
+                "format": "int32"
               }
             }
           }
@@ -59,22 +61,5 @@
       }
     }
   },
-  "components": {
-    "schemas": {
-      "NumberValidation": {
-        "type": "object",
-        "properties": {
-          "inputNumber": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "result": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      }
-    }
-  }
+  "components": { }
 }

@@ -1,31 +1,30 @@
 [
   {
     "ContainingType": "SimpleAPI.Controllers.NumberValidationController",
-    "Method": "validateFizzBuzz",
-    "RelativePath": "NumberValidation",
+    "Method": "GetRandomNumber",
+    "RelativePath": "NumberValidation/getrandomnumber",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SimpleAPI.Controllers.NumberValidationController",
+    "Method": "ValidateFizzBuzz",
+    "RelativePath": "NumberValidation/validatefizzbuzz",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "request",
-        "Type": "SimpleAPI.NumberValidation",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SimpleAPI.Controllers.NumberValidationController",
-    "Method": "GetById",
-    "RelativePath": "NumberValidation/getrandomnumber",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "uniqueID",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],

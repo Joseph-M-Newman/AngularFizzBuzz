@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SimpleAPI.BAL;
+using SimpleAPI.DAL;
 using SimpleAPI.Services;
 
 namespace SimpleAPI.Controllers
@@ -8,36 +10,57 @@ namespace SimpleAPI.Controllers
     //data access layer?
     public class NumberValidationController : ControllerBase
     {
+        private readonly IFizzBuzz _numberValidateService;
+        private readonly RandomNumber _randomNumber;
+        private readonly FizzBuzzCache _fizzBuzzCache;
 
-        private readonly INumberValidate _numberValidateService;
+        //GUID
 
-        private int getRandomNumber()
-        {
-            Random randomNumber = new Random();
-            return randomNumber.Next(1, 100);
-        }
-
-        public NumberValidationController(INumberValidate numberValidateService)
+        public NumberValidationController(IFizzBuzz numberValidateService, RandomNumber randomNumber, FizzBuzzCache fizzBuzzCache)
         {
             _numberValidateService = numberValidateService;
+            _fizzBuzzCache = fizzBuzzCache;
+            _randomNumber = randomNumber;
         }
 
         [HttpGet("getrandomnumber")]
-        public IActionResult GetById(int id)
+        public IActionResult GetRandomNumber()
         {
-            int returnRandom = getRandomNumber();
-            return Ok(returnRandom);
+            return Ok(_randomNumber.Get());
         }
-
-        [HttpPost]
-        public IActionResult validateFizzBuzz([FromBody] NumberValidation request)
+        //add route here - Best practice for REST 
+        [HttpPost("validatefizzbuzz")]
+        public IActionResult ValidateFizzBuzz([FromBody] int request, [FromQuery] string? uniqueID = null)
         {
-            var result = _numberValidateService.ValidateNumber(request.inputNumber);
-
-            return Ok(new NumberValidation
+            // TODO: The same GUID is being passed in with every entry; Find the bug
+            // thats causing this. Look at FizzBuzzCache and check front end input;
+            Guid uID = Guid.Empty;
+            if(uniqueID is not null)
             {
-                inputNumber = request.inputNumber,
-                Result = result
+                uID = Guid.Parse(uniqueID); 
+            }
+
+            if(_fizzBuzzCache.GetFizzBuzz(uID) is "FizzBuzz")
+            {
+                return Ok(new
+                {
+                    uniqueID = uID.ToString(),
+                    fizzBuzz = _fizzBuzzCache.GetFizzBuzz(uID)
+                });
+            }
+
+            //below code is for new FizzBuzz requests
+            var result = _numberValidateService.DoFizzBuzz(request, uID);
+            _fizzBuzzCache.Add(result.FizzBuzz, uID);
+
+            if(result.FizzBuzz is not "FizzBuzz")
+            {
+                return BadRequest("Input is not valid");
+            }
+
+            return Ok(new { 
+                uniqueID = result.UniqueID,
+                fizzBuzz = result.FizzBuzz
             });
         }
     }

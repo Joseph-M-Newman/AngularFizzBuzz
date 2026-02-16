@@ -33,12 +33,14 @@ export class Fizzbuzz {
   private _snackbar = inject(MatSnackBar);
   dialog = inject(MatDialog);
   fizzBuzzValidation!: string;
-  numberValidated: boolean = false
+  numberValidated: boolean = false;
   message: string = "";
-  showExtraContent = false
+  showExtraContent = false;
+  private guid!: string;
   autoInput!: any;
   numberValidations: any[] = [];
-  numberValidationResult!: {inputNumber: number, result: string};
+  guidInput: any = "";
+  dictionaryGUID: Map<string, number> = new Map<string, number>();
   private header!: any
 
   constructor(private http: HttpClient) { }
@@ -46,38 +48,43 @@ export class Fizzbuzz {
   getInputVal(input: any) {
     this.message = "";
     if (input.value != null) {
-      this.validateInput(Number(input.value));
-      if (!this.numberValidated) {
+      if (!this.validateInput(Number(input.value))) {
         this.dialog.open(DialogComponent);
         return;
       }
     }
-
-    this.header = { inputNumber: Number(input.value) }
-    this.postAPI();
+    this.postAPI(input.value);
   }
 
-  postAPI() {
-    this.apiConnection.postAPI(this.header).subscribe(numberValidations => {
-      this._snackbar.open(numberValidations.result, "Done", {
-        duration: 1500,
+  postAPI(input: number) {
+    this.guidInput = this.getKeyByValue(this.dictionaryGUID, input);
+    this.apiConnection.postAPI(input, this.guidInput).subscribe(numberValidations => {
+      if (this.getKeyByValue(this.dictionaryGUID, input) == undefined) {
+        this.guid = numberValidations.uniqueID;
+        this.dictionaryGUID.set(numberValidations.uniqueID, input);
+      }
+      this._snackbar.open("GUID: " + numberValidations.uniqueID, "Done", {
+        duration: 4000,
       });
     });
+    this.guid = "";
   }
 
   validateInput(input: number) {
     if (input > 0 && input <= 100) {
-      this.numberValidated = true;
-      return;
+      return true;
     }
-    this.numberValidated = false;
+    return false;
   }
 
   doItForMe() {
     this.apiConnection.getAPI().subscribe(numberValidations => {
-      this.header = { inputNumber: Number(numberValidations) };
-      this.postAPI();
+      this.header = { request: Number(numberValidations), uniqueID: null };
+      this.postAPI(Number(numberValidations));
     });
   }
 
+  getKeyByValue(map: Map<string, number>, inputValue: number) {
+    return Array.from(map.entries()).find(([a, b]) => b === inputValue)?.[0];
+  }
 }

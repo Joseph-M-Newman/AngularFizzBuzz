@@ -1,8 +1,9 @@
 using SimpleAPI.Startup;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddSwaggerServices();
+builder.Services.AddServices();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp",
