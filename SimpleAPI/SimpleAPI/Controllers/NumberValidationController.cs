@@ -32,28 +32,24 @@ namespace SimpleAPI.Controllers
         [HttpPost("validatefizzbuzz")]
         public IActionResult ValidateFizzBuzz([FromBody] int request, [FromQuery] string? uniqueID = null)
         {
-            // TODO: The same GUID is being passed in with every entry; Find the bug
-            // thats causing this. Look at FizzBuzzCache and check front end input;
-            Guid uID = Guid.Empty;
-            if(uniqueID is not null)
-            {
-                uID = Guid.Parse(uniqueID); 
-            }
 
-            if(_fizzBuzzCache.GetFizzBuzz(uID) is "FizzBuzz")
+            Guid uID = string.IsNullOrEmpty(uniqueID) ? Guid.NewGuid() : Guid.Parse(uniqueID);
+
+            if(_fizzBuzzCache.GetFizzBuzz(uID) == "FizzBuzz")
             {
+                //this if is breaking the same value being entered; after the first instance of the 
+                // UID being entered, it'll save to all future entries..
                 return Ok(new
                 {
-                    uniqueID = uID.ToString(),
+                    uniqueID = uID,
                     fizzBuzz = _fizzBuzzCache.GetFizzBuzz(uID)
                 });
             }
-
             //below code is for new FizzBuzz requests
             var result = _numberValidateService.DoFizzBuzz(request, uID);
             _fizzBuzzCache.Add(result.FizzBuzz, uID);
-
-            if(result.FizzBuzz is not "FizzBuzz")
+            
+            if (result.FizzBuzz is not "FizzBuzz")
             {
                 return BadRequest("Input is not valid");
             }

@@ -8,6 +8,7 @@ namespace SimpleAPI.DAL
 
         public Dictionary<Guid, string> Add(string fizzBuzz, Guid uniqueID)
         {
+            Console.WriteLine("Attempting to Add to the dictionary");
             var canAdd = fizzBuzzStore.TryAdd(uniqueID, fizzBuzz);
             if (!canAdd)
             {
@@ -23,7 +24,6 @@ namespace SimpleAPI.DAL
             {
                 return fizzBuzzResult;
             }
-            Console.WriteLine("Returning blank");
             return "";
         }
 

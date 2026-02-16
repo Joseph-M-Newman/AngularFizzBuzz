@@ -20,6 +20,7 @@ export class FizzBuzzApi {
   public postAPI(input: number, uniqueID: string | null): Observable<any> {
     if (uniqueID && uniqueID !== '')
       this.params = this.params.set('uniqueID', uniqueID)
+    console.log("UniqueID: " + uniqueID);
     return this.api.post(this.apiUrl + `/validatefizzbuzz`, input, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       params: this.params

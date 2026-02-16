@@ -1,5 +1,5 @@
 
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MatFormField } from '@angular/material/form-field'
@@ -38,8 +38,9 @@ export class Fizzbuzz {
   showExtraContent = false;
   autoInput!: any;
   numberValidations: any[] = [];
-  guidInput: any = "";
-  dictionaryGUID: Map<string, number> = new Map<string, number>();
+  existingGUID: any = "";
+  guidToSend: any;
+  dictionaryGUID: Map<number, string> = new Map<number, string>();
   private header!: any
 
   constructor(private http: HttpClient) { }
@@ -56,19 +57,19 @@ export class Fizzbuzz {
   }
 
   postAPI(input: number) {
-    //TODO: GUID isn't being saved on backend. Find the bug and squash it tomorrow 2/16/2026
-    this.guidInput = this.getKeyByValue(this.dictionaryGUID, input);
-    console.log(this.guidInput);
-    this.apiConnection.postAPI(input, this.guidInput).subscribe(numberValidations => {
+    this.existingGUID = this.getKeyByValue(this.dictionaryGUID, input);
+    this.guidToSend = this.existingGUID ?? null;
+    this.apiConnection.postAPI(input, this.guidToSend).subscribe(numberValidations => {
       if (this.getKeyByValue(this.dictionaryGUID, input) == null) {
-        this.guidInput = numberValidations.uniqueID;
-        this.dictionaryGUID.set(numberValidations.uniqueID, input);
+        if (!this.existingGUID) {
+          this.dictionaryGUID.set(Number(input), numberValidations.uniqueID,);
+        }
       }
       this._snackbar.open("GUID: " + numberValidations.uniqueID, "Done", {
         duration: 4000,
       });
+      console.log("Stored Map:", this.dictionaryGUID);
     });
-    this.guidInput = "";
   }
 
   validateInput(input: number) {
@@ -85,10 +86,10 @@ export class Fizzbuzz {
     });
   }
 
-  getKeyByValue(map: Map<string, number>, inputValue: number) {
+  getKeyByValue(map: Map<number, string>, inputValue: number) {
     for (const [key, value] of map) {
-      if (value === inputValue) {
-        return key;
+      if (key == inputValue) {
+        return value;
       }
     }
     return null;

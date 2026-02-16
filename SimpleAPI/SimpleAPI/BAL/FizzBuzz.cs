@@ -6,10 +6,8 @@ namespace SimpleAPI.Services
 {
     public class FizzBuzz : IFizzBuzz
     {
-        private readonly FizzBuzzCache _fizzBuzzCache;
         public FizzBuzz(FizzBuzzCache fizzBuzzCache)
         {
-            _fizzBuzzCache = fizzBuzzCache;
         }
         //Example function DoFizzBuzz
         public string ValidateNumber(int number)
