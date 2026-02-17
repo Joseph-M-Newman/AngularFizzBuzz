@@ -16,7 +16,7 @@ export class FizzBuzzApi {
   }
   constructor() { }
 
-  public postAPI(input: number, uniqueID: string | null): Observable<any> {
+  public postFizzBuzzAPI(input: number, uniqueID: string | null): Observable<any> {
     const params = this.buildParams(uniqueID);
     return this.api.post(this.apiUrl + `/validatefizzbuzz`, input, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -24,15 +24,21 @@ export class FizzBuzzApi {
     });
   }
 
-  public getAPI(): Observable<any> {
+  public getRandomAPI(): Observable<any> {
     return this.api.get(this.apiUrl + `/getrandomnumber`);
+  }
+
+  public postGetDogData(input: number) {
+    return this.api.post(this.apiUrl + `/getrandomdogfact`, input, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    });
   }
 
   public buildParams(uniqueID: string | null) {
     let param = new HttpParams()
     if (uniqueID && uniqueID !== '') {
       param.set('uniqueID', uniqueID);
-      return param;
     }
+    return param;
   }
 }

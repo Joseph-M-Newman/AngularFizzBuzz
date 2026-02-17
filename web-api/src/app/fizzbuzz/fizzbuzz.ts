@@ -34,6 +34,7 @@ export class Fizzbuzz {
   dialog = inject(MatDialog);
   fizzBuzzValidation!: string;
   numberValidated: boolean = false;
+  randomGeneratedNumber!: number;
   message: string = "";
   showExtraContent = false;
   autoInput!: any;
@@ -53,13 +54,13 @@ export class Fizzbuzz {
         return;
       }
     }
-    this.postAPI(input.value);
+    this.postFizzBuzzAPI(input.value);
   }
 
-  postAPI(input: number) {
+  postFizzBuzzAPI(input: number) {
     this.existingGUID = this.getKeyByValue(this.dictionaryGUID, input);
     this.guidToSend = this.existingGUID ?? null;
-    this.apiConnection.postAPI(input, this.guidToSend).subscribe(numberValidations => {
+    this.apiConnection.postFizzBuzzAPI(input, this.guidToSend).subscribe(numberValidations => {
       if (!this.existingGUID) {
         this.dictionaryGUID.set(Number(input), numberValidations.uniqueID,);
       }
@@ -78,9 +79,18 @@ export class Fizzbuzz {
   }
 
   doItForMe() {
-    this.apiConnection.getAPI().subscribe(numberValidations => {
+    this.apiConnection.getRandomAPI().subscribe(numberValidations => {
       this.header = { request: Number(numberValidations), uniqueID: null };
-      this.postAPI(Number(numberValidations));
+      this.postFizzBuzzAPI(Number(numberValidations));
+    });
+  }
+
+  postDogFactAPI() {
+    this.apiConnection.getRandomAPI().subscribe(numberValidations => {
+      this.header = { request: Number(numberValidations), uniqueID: null };
+      this.apiConnection.postGetDogData(Number(numberValidations)).subscribe(randomDogData => {
+        console.log(randomDogData);
+      });
     });
   }
 

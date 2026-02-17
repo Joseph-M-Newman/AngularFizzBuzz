@@ -5,11 +5,12 @@
         <input type="text" matInput #input>
     </mat-form-field>
     <br>
-    <button (click)="getInputVal(input)" matButton="filled">Submit</button>
-
     <div>
-        <br>
+        <button (click)="getInputVal(input)" matButton="filled">Submit</button>
         <button (click)="doItForMe()" matButton="filled">Do it for me!</button>
+    </div>
+    <div>
+        <button (click)="postDogFactAPI()" matButton="filled">Get Random Dog Fact</button>
     </div>
 </div>
 

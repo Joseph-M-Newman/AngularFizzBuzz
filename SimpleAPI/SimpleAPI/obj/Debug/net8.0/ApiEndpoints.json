@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "SimpleAPI.Controllers.NumberValidationController",
+    "Method": "GetAPIData",
+    "RelativePath": "NumberValidation/getrandomdogfact",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "breedID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SimpleAPI.Controllers.NumberValidationController",
     "Method": "GetRandomNumber",
     "RelativePath": "NumberValidation/getrandomnumber",
     "HttpMethod": "GET",
