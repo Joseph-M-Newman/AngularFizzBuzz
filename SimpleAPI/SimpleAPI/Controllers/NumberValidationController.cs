@@ -32,31 +32,23 @@ namespace SimpleAPI.Controllers
         [HttpPost("validatefizzbuzz")]
         public IActionResult ValidateFizzBuzz([FromBody] int request, [FromQuery] string? uniqueID = null)
         {
-
-            Guid uID = string.IsNullOrEmpty(uniqueID) ? Guid.NewGuid() : Guid.Parse(uniqueID);
-
-            if(_fizzBuzzCache.GetFizzBuzz(uID) == "FizzBuzz")
+            Guid uID =  Guid.NewGuid();
+            var existingGuid = _fizzBuzzCache.GetFizzBuzz(request);
+            if(existingGuid != Guid.Empty)
             {
-                //this if is breaking the same value being entered; after the first instance of the 
-                // UID being entered, it'll save to all future entries..
                 return Ok(new
                 {
-                    uniqueID = uID,
-                    fizzBuzz = _fizzBuzzCache.GetFizzBuzz(uID)
+                    uniqueID = existingGuid,
+                    fizzBuzz = "Fizzbuzz"
                 });
             }
             //below code is for new FizzBuzz requests
             var result = _numberValidateService.DoFizzBuzz(request, uID);
-            _fizzBuzzCache.Add(result.FizzBuzz, uID);
-            
-            if (result.FizzBuzz is not "FizzBuzz")
-            {
-                return BadRequest("Input is not valid");
-            }
+            _fizzBuzzCache.Add(request, uID);
 
             return Ok(new { 
                 uniqueID = result.UniqueID,
-                fizzBuzz = result.FizzBuzz
+                fizzBuzz = "FizzBuzz"
             });
         }
     }

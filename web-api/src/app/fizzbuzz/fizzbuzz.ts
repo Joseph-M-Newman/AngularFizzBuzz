@@ -60,13 +60,11 @@ export class Fizzbuzz {
     this.existingGUID = this.getKeyByValue(this.dictionaryGUID, input);
     this.guidToSend = this.existingGUID ?? null;
     this.apiConnection.postAPI(input, this.guidToSend).subscribe(numberValidations => {
-      if (this.getKeyByValue(this.dictionaryGUID, input) == null) {
-        if (!this.existingGUID) {
-          this.dictionaryGUID.set(Number(input), numberValidations.uniqueID,);
-        }
+      if (!this.existingGUID) {
+        this.dictionaryGUID.set(Number(input), numberValidations.uniqueID,);
       }
       this._snackbar.open("GUID: " + numberValidations.uniqueID, "Done", {
-        duration: 4000,
+        duration: 2000,
       });
       console.log("Stored Map:", this.dictionaryGUID);
     });

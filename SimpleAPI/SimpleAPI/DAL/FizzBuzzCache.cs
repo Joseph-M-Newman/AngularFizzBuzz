@@ -4,32 +4,33 @@ namespace SimpleAPI.DAL
 {
     public class FizzBuzzCache
     {
-        public Dictionary<Guid, string> fizzBuzzStore = new Dictionary<Guid, string>();
+        public Dictionary<int, Guid> fizzBuzzStore = new Dictionary<int, Guid>();
 
-        public Dictionary<Guid, string> Add(string fizzBuzz, Guid uniqueID)
+        public Dictionary<int, Guid> Add(int numberInput, Guid uniqueID)
         {
             Console.WriteLine("Attempting to Add to the dictionary");
-            var canAdd = fizzBuzzStore.TryAdd(uniqueID, fizzBuzz);
+            var canAdd = fizzBuzzStore.TryAdd(numberInput, uniqueID);
+            Console.WriteLine("Current dictionary count: " + fizzBuzzStore.Count);
             if (!canAdd)
             {
-                fizzBuzzStore[uniqueID] = fizzBuzz;
+                fizzBuzzStore[numberInput] = uniqueID;
             }
             return fizzBuzzStore;
         }
 
-        public string GetFizzBuzz(Guid uniqueId)
+        public Guid GetFizzBuzz(int numberInput)
         {
-            var result = fizzBuzzStore.TryGetValue(uniqueId, out var fizzBuzzResult);
+            var result = fizzBuzzStore.TryGetValue(numberInput, out var fizzBuzzResult);
             if (result)
             {
                 return fizzBuzzResult;
             }
-            return "";
+            return Guid.Empty;
         }
 
-        public string DeleteFizzBuzzEntry(Guid uniqueId)
+        public string DeleteFizzBuzzEntry(int numberInput)
         {
-            var result = fizzBuzzStore.Remove(uniqueId);
+            var result = fizzBuzzStore.Remove(numberInput);
             if(result)
             {
                 return "Entry deleted";

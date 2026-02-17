@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 export class FizzBuzzApi {
   private api = inject(HttpClient);
   private apiUrl = `https://localhost:7204/NumberValidation`;
-  private params = new HttpParams();
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 
@@ -18,12 +17,10 @@ export class FizzBuzzApi {
   constructor() { }
 
   public postAPI(input: number, uniqueID: string | null): Observable<any> {
-    if (uniqueID && uniqueID !== '')
-      this.params = this.params.set('uniqueID', uniqueID)
-    console.log("UniqueID: " + uniqueID);
+    const params = this.buildParams(uniqueID);
     return this.api.post(this.apiUrl + `/validatefizzbuzz`, input, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-      params: this.params
+      params: params
     });
   }
 
@@ -31,4 +28,11 @@ export class FizzBuzzApi {
     return this.api.get(this.apiUrl + `/getrandomnumber`);
   }
 
+  public buildParams(uniqueID: string | null) {
+    let param = new HttpParams()
+    if (uniqueID && uniqueID !== '') {
+      param.set('uniqueID', uniqueID);
+      return param;
+    }
+  }
 }
