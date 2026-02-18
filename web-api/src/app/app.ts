@@ -7,7 +7,6 @@ import { Sidebars } from './sidebars/sidebars';
   selector: 'app-root',
   standalone: true,
   imports: [
-    Sidebars,
     RouterOutlet
   ],
   templateUrl: './app.html',

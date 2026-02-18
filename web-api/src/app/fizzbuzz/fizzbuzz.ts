@@ -12,6 +12,8 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog-component/dialog-component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { Sidebars } from "../sidebars/sidebars";
 
 @Component({
   selector: 'app-fizzbuzz',
@@ -23,7 +25,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatLabel,
     MatButtonModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
+    Sidebars
   ],
   templateUrl: './fizzbuzz.html',
   styleUrl: './fizzbuzz.css',

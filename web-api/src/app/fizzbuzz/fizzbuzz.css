@@ -1,43 +1,11 @@
-.container {
-    position: fixed;
-    top: 2;
-    left: 0;
-    height: 100%;
-    width: 105px;
-
-}
-
-.sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.sideNavPosition {
-    top: 0;
-}
-
-.sidenav {
-    padding: 20px;
-    background-color: #4169E1;
-}
-
-.flexButton {
-    display: flex;
-    flex-direction: column;
-    width: 15%;
-    gap: 10px;
-}
-
-.sideNav {
-    display: flex;
-    flex-flow: column;
-    height: 100%;
-}
-
 .matInput {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 300px;
+    max-width: 400px;
 }
 
 .matToolBar {
@@ -46,9 +14,23 @@
     background-color: #4169E1;
 }
 
+.matButtonRow {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
 .navContainer {
     font-size: 0;
 }
+
+.pageCenter {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 a {
     text-decoration: none;
