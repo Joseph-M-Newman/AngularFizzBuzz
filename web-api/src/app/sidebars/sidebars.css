@@ -43,7 +43,7 @@
 .matToolBar {
     text-align: center;
     color: white;
-    background-color: #4169E1;
+    background-color: #004f4f;
 }
 
 .navContainer {
@@ -52,4 +52,13 @@
 
 a {
     text-decoration: none;
+}
+
+.mat-drawer-container {
+    background-color: #1e1e1e !important;
+}
+
+.mat-drawer {
+    background-color: #004f4f !important;
+    color: white;
 }

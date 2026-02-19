@@ -1,9 +1,58 @@
 <main>
     <app-sidebars></app-sidebars>
+    <div class="table">
+        <table mat-table [dataSource]="(dogData | async) ?? []" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="dogBreed">
+                <th mat-header-cell *matHeaderCellDef> Dog Breed </th>
+                <td mat-cell *matCellDef="let element"> {{element.dogBreed}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="lifeMin">
+                <th mat-header-cell *matHeaderCellDef> Life Min. </th>
+                <td mat-cell *matCellDef="let element"> {{element.lifeMin}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="lifeMax">
+                <th mat-header-cell *matHeaderCellDef> Life Max </th>
+                <td mat-cell *matCellDef="let element"> {{element.lifeMax}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="maleWeightMin">
+                <th mat-header-cell *matHeaderCellDef> Male Weight Min. </th>
+                <td mat-cell *matCellDef="let element"> {{element.maleWeightMin}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="maleWeightMax">
+                <th mat-header-cell *matHeaderCellDef> Male Weight Max </th>
+                <td mat-cell *matCellDef="let element"> {{element.maleWeightMax}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="femaleWeightMin">
+                <th mat-header-cell *matHeaderCellDef> Female Weight Min </th>
+                <td mat-cell *matCellDef="let element"> {{element.femaleWeightMin}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="femaleWeightMax">
+                <th mat-header-cell *matHeaderCellDef> Female Weight Max </th>
+                <td mat-cell *matCellDef="let element"> {{element.femaleWeightMax}}</td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </div>
     <div class="dogAction">
         <div style="text-align: center;">
             <!-- TODO rename appropriately to Dog Fact  -->
-            <button (click)="postDogFactAPI()" matButton="filled">Get Random Dog Fact</button>
+            <button style="background-color: #004f4f !important;" (click)="postDogFactAPI()" matButton="filled">Add
+                Random Dog Fact To Table</button>
         </div>
     </div>
 </main>

@@ -6,3 +6,30 @@
     gap: 10px;
     height: 10vh;
 }
+
+.table {
+    padding-left: 5%;
+    background-color: #1e1e1e;
+}
+
+.mat-mdc-table {
+    background-color: #1e1e1e !important;
+    color: white;
+}
+
+.mat-mdc-header-row {
+    background-color: #1e1e1e !important;
+}
+
+.mat-mdc-row {
+    background-color: #1e1e1e !important;
+}
+
+.mat-mdc-cell,
+.mat-mdc-header-cell {
+    color: white !important;
+}
+
+.dogFactButton {
+    background-color: #004f4f !important;
+}

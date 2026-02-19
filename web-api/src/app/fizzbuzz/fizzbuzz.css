@@ -31,7 +31,14 @@
     align-items: center;
 }
 
+body {
+    color: white;
+}
 
 a {
     text-decoration: none;
+}
+
+.actionButtons {
+    background-color: #004f4f !important;
 }
