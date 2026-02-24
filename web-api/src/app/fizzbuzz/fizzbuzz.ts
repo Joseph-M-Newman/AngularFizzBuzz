@@ -68,14 +68,15 @@ export class Fizzbuzz {
       // if (!this.existingGUID) {
       //   this.dictionaryGUID.set(Number(input), numberValidations.uniqueID,);
       // }
-      this._snackbar.open("FizzBuzz Result: " + numberValidations.uniqueID[input], "Done", {
+      console.log(numberValidations.fizzBuzzArray);
+      this._snackbar.open("FizzBuzz Result: " + numberValidations.fizzBuzzArray[input], "Done", {
         duration: 4000,
       });
     });
   }
 
   validateInput(input: number) {
-    if (input > 0 && input <= 100) {
+    if (input >= 0 && input <= 100) {
       return true;
     }
     return false;

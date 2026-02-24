@@ -6,7 +6,7 @@ namespace SimpleAPI.DAL
     public class FizzBuzzCache
     {
         public Dictionary<int, Guid> fizzBuzzStore = new Dictionary<int, Guid>();
-        public string[] fizzBuzzArray = new string[99];
+        public string[] fizzBuzzArray = new string[101];
         public Dictionary<int, Guid> Add(int numberInput, Guid uniqueID)
         {
             Console.WriteLine("Attempting to Add to the dictionary");

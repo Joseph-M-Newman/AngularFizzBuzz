@@ -71,7 +71,7 @@ namespace SimpleAPI.Controllers
 
             return Ok(new
             {
-                uniqueID = fizzBuzzArray,
+                fizzBuzzArray = fizzBuzzArray,
                 fizzBuzz = "fizzBuzzArray"
             });
         }
