@@ -6,13 +6,16 @@
         {
         }
 
-        public FizzBuzzResponse(string fizzBuzz, Guid uniqueID)
+        public FizzBuzzResponse(int index, string fizzBuzzArray)
         {
-            UniqueID = uniqueID;
-            FizzBuzz = fizzBuzz;
+            fizzBuzzArrayIndex = index;
+            FizzBuzzLogicResult = fizzBuzzArray;
         }
-        public Guid UniqueID { get; set; }
-        public string FizzBuzz { get; set; }
+        //public Guid UniqueID { get; set; }
+        //public string FizzBuzz { get; set; }
+
+        public int fizzBuzzArrayIndex { get; set; }
+        public string FizzBuzzLogicResult {  get; set; }
 
     }
 }

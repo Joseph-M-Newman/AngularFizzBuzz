@@ -36,22 +36,43 @@ namespace SimpleAPI.Controllers
         public IActionResult ValidateFizzBuzz([FromBody] int request, [FromQuery] string? uniqueID = null)
         {
             var existingGuid = _fizzBuzzCache.GetFizzBuzz(request);
-            if(existingGuid != Guid.Empty)
+            string[] fizzBuzzArray = _fizzBuzzCache.getFizzBuzzArray();
+            if (fizzBuzzArray == null)
             {
-                return Ok(new
-                {
-                    uniqueID = existingGuid,
-                    fizzBuzz = "Fizzbuzz"
-                });
+                fizzBuzzArray = [];
             }
-            Guid uID = Guid.NewGuid();
+            //if(existingGuid != Guid.Empty)
+            //{
+            //    return Ok(new
+            //    {
+            //        uniqueID = existingGuid,
+            //        fizzBuzz = "Fizzbuzz"
+            //    });
+            //}
+            //Guid uID = Guid.NewGuid();
             //below code is for new FizzBuzz requests
-            var result = _numberValidateService.DoFizzBuzz(request, uID);
-            _fizzBuzzCache.Add(request, uID);
+            //Changing how FizzBuzz Works keeping this in
+            //var result = _numberValidateService.DoFizzBuzz(request, uID);
 
-            return Ok(new { 
-                uniqueID = result.UniqueID,
-                fizzBuzz = "FizzBuzz"
+
+            // Below *Would be* logic to check if fizzBuzz had already been completed for the
+            // input number
+            //if(_fizzBuzzCache.CheckIfFizzBuzzAlreadyInArray(request))
+            //{
+            //    return Ok(new
+            //    {
+            //        uniqueID = fizzBuzzArray,
+            //        fizzBuzz = "fizzBuzzArray"
+            //    });
+            //}
+
+            var result = _numberValidateService.DoFizzBuzzLogic(request);
+            fizzBuzzArray = _fizzBuzzCache.setIndexOfFizzBuzz(request, result);
+
+            return Ok(new
+            {
+                uniqueID = fizzBuzzArray,
+                fizzBuzz = "fizzBuzzArray"
             });
         }
 

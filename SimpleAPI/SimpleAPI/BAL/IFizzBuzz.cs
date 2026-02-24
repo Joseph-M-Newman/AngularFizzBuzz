@@ -6,6 +6,9 @@ namespace SimpleAPI.Services
     public interface IFizzBuzz
     {
         string ValidateNumber(int number);
-        FizzBuzzResponse DoFizzBuzz(int number, Guid uniqueID);
+        FizzBuzzResponse DoFizzBuzz(int index, string FizzBuzzLogicResult);
+
+        string DoFizzBuzzLogic(int index);
+
     }
 }

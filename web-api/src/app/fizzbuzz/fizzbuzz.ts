@@ -65,13 +65,12 @@ export class Fizzbuzz {
     this.existingGUID = this.getKeyByValue(this.dictionaryGUID, input);
     this.guidToSend = this.existingGUID ?? null;
     this.apiConnection.postFizzBuzzAPI(input, this.guidToSend).subscribe(numberValidations => {
-      if (!this.existingGUID) {
-        this.dictionaryGUID.set(Number(input), numberValidations.uniqueID,);
-      }
-      this._snackbar.open("GUID: " + numberValidations.uniqueID, "Done", {
-        duration: 2000,
+      // if (!this.existingGUID) {
+      //   this.dictionaryGUID.set(Number(input), numberValidations.uniqueID,);
+      // }
+      this._snackbar.open("FizzBuzz Result: " + numberValidations.uniqueID[input], "Done", {
+        duration: 4000,
       });
-      console.log("Stored Map:", this.dictionaryGUID);
     });
   }
 
@@ -93,7 +92,6 @@ export class Fizzbuzz {
     this.apiConnection.getRandomAPI().subscribe(numberValidations => {
       this.header = { request: Number(numberValidations), uniqueID: null };
       this.apiConnection.postGetDogData(Number(numberValidations)).subscribe(randomDogData => {
-        console.log(randomDogData);
       });
     });
   }
