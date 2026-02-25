@@ -14,11 +14,13 @@ import { DialogComponent } from '../dialog-component/dialog-component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { Sidebars } from "../sidebars/sidebars";
+import { Fizzbuzztable } from '../fizzbuzztable/fizzbuzztable';
 
 @Component({
   selector: 'app-fizzbuzz',
   standalone: true,
   imports: [
+    Fizzbuzztable,
     CommonModule,
     MatFormField,
     MatInputModule,
@@ -43,6 +45,7 @@ export class Fizzbuzz {
   showExtraContent = false;
   autoInput!: any;
   numberValidations: any[] = [];
+  fizzBuzzValidationArray: any[] = [];
   existingGUID: any = "";
   guidToSend: any;
   dictionaryGUID: Map<number, string> = new Map<number, string>();
@@ -62,13 +65,16 @@ export class Fizzbuzz {
   }
 
   postFizzBuzzAPI(input: number) {
+    if (this.fizzBuzzValidationArray[input] != null) {
+      this._snackbar.open("FizzBuzz Result: " + this.fizzBuzzValidationArray[input], "Done", {
+        duration: 4000,
+      });
+      return;
+    }
     this.existingGUID = this.getKeyByValue(this.dictionaryGUID, input);
     this.guidToSend = this.existingGUID ?? null;
     this.apiConnection.postFizzBuzzAPI(input, this.guidToSend).subscribe(numberValidations => {
-      // if (!this.existingGUID) {
-      //   this.dictionaryGUID.set(Number(input), numberValidations.uniqueID,);
-      // }
-      console.log(numberValidations.fizzBuzzArray);
+      this.fizzBuzzValidationArray = numberValidations.fizzBuzzArray;
       this._snackbar.open("FizzBuzz Result: " + numberValidations.fizzBuzzArray[input], "Done", {
         duration: 4000,
       });

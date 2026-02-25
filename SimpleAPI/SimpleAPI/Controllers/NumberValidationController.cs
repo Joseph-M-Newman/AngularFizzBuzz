@@ -71,8 +71,7 @@ namespace SimpleAPI.Controllers
 
             return Ok(new
             {
-                fizzBuzzArray = fizzBuzzArray,
-                fizzBuzz = "fizzBuzzArray"
+                fizzBuzzArray = fizzBuzzArray
             });
         }
 

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\SWE\\AngularFizzBuzz\\SimpleAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{836C07CA-99CE-481E-ADBF-61DFB0D499F5}|SimpleAPI\\SimpleAPI.csproj|c:\\users\\user\\desktop\\swe\\angularfizzbuzz\\simpleapi\\simpleapi\\dal\\fizzbuzzcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{836C07CA-99CE-481E-ADBF-61DFB0D499F5}|SimpleAPI\\SimpleAPI.csproj|solutionrelative:simpleapi\\dal\\fizzbuzzcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{836C07CA-99CE-481E-ADBF-61DFB0D499F5}|SimpleAPI\\SimpleAPI.csproj|c:\\users\\user\\desktop\\swe\\angularfizzbuzz\\simpleapi\\simpleapi\\controllers\\numbervalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{836C07CA-99CE-481E-ADBF-61DFB0D499F5}|SimpleAPI\\SimpleAPI.csproj|solutionrelative:simpleapi\\controllers\\numbervalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{836C07CA-99CE-481E-ADBF-61DFB0D499F5}|SimpleAPI\\SimpleAPI.csproj|c:\\users\\user\\desktop\\swe\\angularfizzbuzz\\simpleapi\\simpleapi\\dal\\fizzbuzzcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{836C07CA-99CE-481E-ADBF-61DFB0D499F5}|SimpleAPI\\SimpleAPI.csproj|solutionrelative:simpleapi\\dal\\fizzbuzzcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{836C07CA-99CE-481E-ADBF-61DFB0D499F5}|SimpleAPI\\SimpleAPI.csproj|c:\\users\\user\\desktop\\swe\\angularfizzbuzz\\simpleapi\\simpleapi\\bal\\ifizzbuzz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 208,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Document",
@@ -90,8 +90,7 @@
               "RelativeToolTip": "SimpleAPI\\Helpers\\DogBreedIDList.cs",
               "ViewState": "AgIAAF4AAAAAAAAAAAAgwG0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T20:45:43.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T20:45:43.181Z"
             },
             {
               "$type": "Document",
@@ -103,8 +102,7 @@
               "RelativeToolTip": "SimpleAPI\\SimpleAPI.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-17T20:44:44.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T20:44:44.717Z"
             },
             {
               "$type": "Document",
@@ -128,8 +126,7 @@
               "RelativeToolTip": "SimpleAPI\\BAL\\IDogFactAPI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T19:55:06.022Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T19:55:06.022Z"
             },
             {
               "$type": "Document",
@@ -141,8 +138,7 @@
               "RelativeToolTip": "SimpleAPI\\BAL\\DogFactAPI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T19:54:54.053Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T19:54:54.053Z"
             },
             {
               "$type": "Document",
@@ -154,18 +150,17 @@
               "RelativeToolTip": "SimpleAPI\\Core\\Models\\DogAPIResponse.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T19:51:35.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T19:51:35.176Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "FizzBuzzCache.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\SWE\\AngularFizzBuzz\\SimpleAPI\\SimpleAPI\\DAL\\FizzBuzzCache.cs",
               "RelativeDocumentMoniker": "SimpleAPI\\DAL\\FizzBuzzCache.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\SWE\\AngularFizzBuzz\\SimpleAPI\\SimpleAPI\\DAL\\FizzBuzzCache.cs",
               "RelativeToolTip": "SimpleAPI\\DAL\\FizzBuzzCache.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAhwDEAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-15T21:02:21.087Z",
               "EditorCaption": ""
@@ -180,8 +175,7 @@
               "RelativeToolTip": "SimpleAPI\\Core\\Models\\FizzBuzzResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T20:46:26.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-15T20:46:26.47Z"
             },
             {
               "$type": "Document",
@@ -193,8 +187,7 @@
               "RelativeToolTip": "SimpleAPI\\Startup\\OpenApiConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T20:31:53.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-15T20:31:53.451Z"
             },
             {
               "$type": "Document",
@@ -206,8 +199,7 @@
               "RelativeToolTip": "SimpleAPI\\BAL\\RandomNumber.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-15T20:24:46.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-15T20:24:46.716Z"
             },
             {
               "$type": "Document",
@@ -219,8 +211,7 @@
               "RelativeToolTip": "SimpleAPI\\BAL\\IFizzBuzz.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T00:41:01.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-13T00:41:01.041Z"
             },
             {
               "$type": "Document",
@@ -232,8 +223,7 @@
               "RelativeToolTip": "SimpleAPI\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T02:33:38.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T02:33:38.699Z"
             },
             {
               "$type": "Document",
@@ -257,8 +247,7 @@
               "RelativeToolTip": "SimpleAPI\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-11T02:42:31.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T02:42:31.236Z"
             },
             {
               "$type": "Document",
@@ -270,18 +259,17 @@
               "RelativeToolTip": "SimpleAPI\\BAL\\FizzBuzz.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T00:43:58.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-13T00:43:58.281Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "NumberValidationController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\SWE\\AngularFizzBuzz\\SimpleAPI\\SimpleAPI\\Controllers\\NumberValidationController.cs",
               "RelativeDocumentMoniker": "SimpleAPI\\Controllers\\NumberValidationController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\SWE\\AngularFizzBuzz\\SimpleAPI\\SimpleAPI\\Controllers\\NumberValidationController.cs",
               "RelativeToolTip": "SimpleAPI\\Controllers\\NumberValidationController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAwwEwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwEkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-11T02:55:31.873Z",
               "EditorCaption": ""
@@ -296,8 +284,7 @@
               "RelativeToolTip": "SimpleAPI\\NumberValidation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T03:16:08.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T03:16:08.872Z"
             }
           ]
         }
